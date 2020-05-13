@@ -117,9 +117,9 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a th:href="@{/#our-services}">Services</a></li>
                             <li><a th:href="@{/gallery}">Gallery</a></li>
                             <li><a th:href="@{/#about-us}">About</a></li>
+                            <li><a th:href="@{/#our-services}">Services</a></li>
                             <li><a th:href="@{/#contact-us}">Contact</a></li>
                         </ul>
                     </nav>
@@ -156,9 +156,9 @@
                         <ul class="meninmenu">
                             <li><a th:href="@{/}">Home</a></li>
                             <li><a th:href="@{/shop/books}">Shop</a></li>
-                            <li><a th:href="@{/#our-services}">Services</a></li>
                             <li><a th:href="@{/gallery}">Gallery</a></li>
                             <li><a th:href="@{/#about-us}">About</a></li>
+                            <li><a th:href="@{/#our-services}">Services</a></li>
                             <li><a th:href="@{/#contact-us}">Contact</a></li>
                             <li><a th:href="@{/login}">My Account</a></li>
                         </ul>
@@ -274,8 +274,7 @@
 
                                 <div class="card">
                                     <div class="card-body">
-                                        <img class="img-fluid shelf-book" src="../../static/extra/image/book/4.png"
-                                             th:src="@{~/resources/static/extra/image/book/}+${book.id}+'.png'"/>
+                                        <img class="img-fluid shelf-book" th:src="@{/extra/image/book/}+${book.id}+'.png'"/>
                                     </div>
                                 </div>
                             </div>

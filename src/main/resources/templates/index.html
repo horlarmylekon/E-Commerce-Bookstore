@@ -116,9 +116,9 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li><a href="#our-services">Services</a></li>
                                 <li><a th:href="@{/gallery}">Gallery</a></li>
                                 <li><a href="#about-us">About</a></li>
+                                <li><a href="#our-services">Services</a></li>
                                 <li><a href="#contact-us">Contact</a></li>
                             </ul>
                         </nav>
@@ -155,9 +155,9 @@
                             <ul class="meninmenu">
                                 <li><a th:href="@{/}">Home</a></li>
                                 <li><a th:href="@{/shop/books}">Shop</a></li>
-                                <li><a href="#our-services">Services</a></li>
                                 <li><a th:href="@{/gallery}">Gallery</a></li>
                                 <li><a href="#about-us">About US</a></li>
+                                <li><a href="#our-services">Services</a></li>
                                 <li><a href="#contact-us">Contact</a></li>
                                 <li><a th:href="@{/login}">My Account</a></li>
                             </ul>
@@ -228,6 +228,56 @@
             <!-- End Single Slide -->
         </div>
         <!-- End Slider area -->
+
+
+        <!-- Start About Us Area -->
+        <section class="wn__recent__post bg--gray ptb--80">
+            <div class="container">
+                <div class="row" id="about-us">
+                    <div class="col-lg-12">
+                        <div class="section__title text-center">
+                            <h2  class="title__be--2">About <span class="color--theme">Us</span></h2>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                suffered lebmid alteration in some ledmid form</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt--50">
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a th:href="@{#}">Our Goal</a>
+                                </h3>
+                                <p>Supporting the breeding of well groomed children with sound academic foundation well
+                                    blended with sublime character add value to humanity and it dynamic.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a th:href="@{#}">Our Vision</a></h3>
+                                <p>To be a one stop shop in Nigeria providing the most fantastic and very rich learning
+                                    resources for young learners.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a th:href="@{#}">Our Mission</a>
+                                </h3>
+                                <p>To facilitate building of academic gaints who in turn constitute national human assets
+                                    adding value to humanity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- End About Us Area -->
+
 
         <!-- Start Our Services Area -->
         <section id="our-services" class="wn__product__area brown--color pt--80  pb--30">
@@ -328,158 +378,10 @@
         </section>
         <!-- Start Our Services Area -->
 
-        <!-- Start Newsletter Area -->
-        <section class="wn__newsletter__area bg-image--2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--150">
-                        <div class="section__title text-center">
-                            <h2>Stay With Us</h2>
-                        </div>
-                        <div class="newsletter__block text-center">
-                            <p>Subscribe to our newsletters now and stay up-to-date with new collections, the latest
-                                lookbooks and exclusive offers.</p>
-                            <form action="#">
-                                <div class="newsletter__box">
-                                    <input type="email" placeholder="Enter your e-mail">
-                                    <button>Subscribe</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Newsletter Area -->
-
-        <!-- Start Best Sellers Area -->
-        <section class="wn__bestseller__area bg--white pt--80  pb--30">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section__title text-center">
-                            <h2 class="title__be--2">Best <span class="color--theme">Sellers</span></h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered lebmid alteration in some ledmid form</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab__container mt--60">
-                    <!-- Start Single Tab Content -->
-                    <div class="row single__tab tab-pane fade show active" id="nav-all" role="tabpanel">
-                        <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-                            <div class="single__product">
-                                <!-- Start Single Product -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                    <div class="product product__style--3">
-                                        <div class="product__thumb">
-                                            <a class="first__img" th:href="@{#}"><img
-                                                    th:src="@{assets/images/books/1.jpg}" alt="product image"></a>
-                                            <a class="second__img animation1" th:href="@{#}"><img
-                                                    th:src="@{assets/images/books/2.jpg}" alt="product image"></a>
-                                            <div class="hot__box">
-                                                <span class="hot-label">BEST SALLER</span>
-                                            </div>
-                                        </div>
-                                        <div class="product__content content--center content--center">
-                                            <h4><a th:href="@{#}">Ghost</a></h4>
-                                            <ul class="prize d-flex">
-                                                <li>$50.00</li>
-                                                <li class="old_prize">$35.00</li>
-                                            </ul>
-                                            <!--<div class="action">-->
-                                                <!--<div class="actions_inner">-->
-                                                    <!--<ul class="add_to_links">-->
-                                                        <!--<li><a class="cart" href="#"><i-->
-                                                                <!--class="bi bi-shopping-bag4"></i></a></li>-->
-                                                        <!--<li><a class="wishlist" href="#"><i-->
-                                                                <!--class="bi bi-shopping-cart-full"></i></a></li>-->
-                                                        <!--<li><a class="compare" href="#"><i-->
-                                                                <!--class="bi bi-heart-beat"></i></a></li>-->
-                                                        <!--<li><a data-toggle="modal" title="Quick View"-->
-                                                               <!--class="quickview modal-view detail-link"-->
-                                                               <!--href="#productmodal"><i class="bi bi-search"></i></a>-->
-                                                        <!--</li>-->
-                                                    <!--</ul>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                            <!--<div class="product__hover&#45;&#45;content">-->
-                                                <!--<ul class="rating d-flex">-->
-                                                    <!--<li class="on"><i class="fa fa-star-o"></i></li>-->
-                                                    <!--<li class="on"><i class="fa fa-star-o"></i></li>-->
-                                                    <!--<li class="on"><i class="fa fa-star-o"></i></li>-->
-                                                    <!--<li><i class="fa fa-star-o"></i></li>-->
-                                                    <!--<li><i class="fa fa-star-o"></i></li>-->
-                                                <!--</ul>-->
-                                            <!--</div>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Start Single Product -->
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- End Single Tab Content -->
-
-                </div>
-            </div>
-        </section>
-        <!-- Start Best Sellers Area -->
-
-        <!-- Start About Us Area -->
-        <section class="wn__recent__post bg--gray ptb--80">
-            <div class="container">
-                <div class="row" id="about-us">
-                    <div class="col-lg-12">
-                        <div class="section__title text-center">
-                            <h2  class="title__be--2">About <span class="color--theme">Us</span></h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered lebmid alteration in some ledmid form</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt--50">
-                    <div class="col-md-6 col-lg-4 col-sm-12">
-                        <div class="post__itam">
-                            <div class="content">
-                                <h3><a th:href="@{#}">Our Goal</a>
-                                </h3>
-                                <p>Supporting the breeding of well groomed children with sound academic foundation well
-                                blended with sublime character add value to humanity and it dynamic.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-sm-12">
-                        <div class="post__itam">
-                            <div class="content">
-                                <h3><a th:href="@{#}">Our Vision</a></h3>
-                                <p>To be a one stop shop in Nigeria providing the most fantastic and very rich learning
-                                resources for young learners.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-sm-12">
-                        <div class="post__itam">
-                            <div class="content">
-                                <h3><a th:href="@{#}">Our Mission</a>
-                                </h3>
-                                <p>To facilitate building of academic gaints who in turn constitute national human assets
-                                adding value to humanity.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- End About Us Area -->
-
         <!-- Start Contact Area -->
-        <section class="wn_contact_area bg--white pt--80 pb--80">
+        <section id="contact-us" class="wn_contact_area bg--white pt--80 pb--80">
             <div class="container">
-                <div class="row" id="contact-us">
+                <div class="row">
                     <div class="col-lg-12">
                         <div class="section__title text-center">
                             <h2  class="title__be--2">Contact <span class="color--theme">Us</span></h2>

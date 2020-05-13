@@ -53,6 +53,7 @@ public class BookController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addBookPost(@ModelAttribute("book") Book book, HttpServletRequest request) {
+
         bookService.save(book);
 
         MultipartFile bookImage = book.getBookImage();
@@ -60,12 +61,13 @@ public class BookController {
         try {
             byte[] bytes = bookImage.getBytes();
             String name = book.getId() + ".png";
-            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File("src/main/resources/static/image/book/" + name)));
+            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File("src/main/resources/static/extra/image/book/" + name)));
             stream.write(bytes);
             stream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
 
         return "redirect:bookList";
     }
@@ -88,7 +90,6 @@ public class BookController {
 
     @RequestMapping(value="/updateBook", method=RequestMethod.POST)
     public String updateBookPost(@ModelAttribute("book") Book book, HttpServletRequest request) {
-        bookService.save(book);
 
         MultipartFile bookImage = book.getBookImage();
 
@@ -107,6 +108,8 @@ public class BookController {
                 e.printStackTrace();
             }
         }
+        bookService.save(book);
+
 
         return "redirect:/admin/book/bookInfo?id="+book.getId();
     }
