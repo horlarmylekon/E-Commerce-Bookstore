@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>My Account &dash; Deenbreed Bookshop and Education Resource Centre.</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <link rel="apple-touch-icon" href="images/icon.png">
+
+    <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" th:href="@{assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{assets/css/plugins.css}">
+    <link rel="stylesheet" th:href="@{assets/css/style.css}">
+
+    <!-- Cusom css -->
+    <link rel="stylesheet" th:href="@{assets/css/custom.css}">
+
+    <!-- Modernizer js -->
+    <script th:src="@{assets/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+<body>
+
+<div class="wrapper" id="wrapper">
+
+    <!-- Header -->
+    <header id="wn__header" class="oth-page header__area header__absolute sticky__header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <div class="logo">
+                        <a th:href="@{/}">
+                            <!-- company logo -->
+                            <!--<img src="images/logo/logo.png" alt="logo images">-->
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 d-none d-lg-block">
+                    <nav class="mainmenu__nav">
+                        <ul class="meninmenu d-flex justify-content-start">
+                            <li class="drop with--one--item"><a th:href="@{/}">Home</a></li>
+                            <li class="drop with--one--item"><a th:href="@{/shop/books}">Shop</a></li>
+                            <li class="drop"><a href="#">Books</a>
+                                <div class="megamenu mega03">
+                                    <ul class="item item03">
+                                        <li class="title">Categories</li>
+                                        <li><a th:href="@{#}">Accounting </a></li>
+                                        <li><a th:href="@{#}">Architecture </a></li>
+                                        <li><a th:href="@{#}">Art and Culture </a></li>
+                                        <li><a th:href="@{#}">Autobiography/Biography </a></li>
+                                        <li><a th:href="@{#}">Business </a></li>
+                                        <li><a th:href="@{#}">Cooking/Food </a></li>
+                                        <li><a th:href="@{#}">Development </a></li>
+                                        <li><a th:href="@{#}">Economics </a></li>
+                                        <li><a th:href="@{#}">Engineering</a></li>
+                                        <li><a th:href="@{#}">Fiction</a></li>
+                                    </ul>
+                                    <ul class="item item02">
+                                        <li class="title">Categories</li>
+                                        <li><a th:href="@{#}">Finance </a></li>
+                                        <li><a th:href="@{#}">History</a></li>
+                                        <li><a th:href="@{#}">Law </a></li>
+                                        <li><a th:href="@{#}">Medicine </a></li>
+                                        <li><a th:href="@{#}">New Books</a></li>
+                                        <li><a th:href="@{#}">Philosophy</a></li>
+                                        <li><a th:href="@{#}">Politics </a></li>
+                                        <li><a th:href="@{#}">Religion</a></li>
+                                        <li><a th:href="@{#}">Sport</a></li>
+                                        <li><a th:href="@{#}">Fiction</a></li>
+                                    </ul>
+                                    <ul class="item item01">
+                                        <li class="title">Categories</li>
+                                        <li><a th:href="@{#}">Finance </a></li>
+                                        <li><a th:href="@{#}">History</a></li>
+                                        <li><a th:href="@{#}">Law </a></li>
+                                        <li><a th:href="@{#}">Medicine </a></li>
+                                        <li><a th:href="@{#}">New Books</a></li>
+                                        <li><a th:href="@{#}">Philosophy</a></li>
+                                        <li><a th:href="@{#}">Politics </a></li>
+                                        <li><a th:href="@{#}">Religion</a></li>
+                                        <li><a th:href="@{#}">Sport</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="drop"><a href="#">Kids</a>
+                                <div class="megamenu mega02">
+                                    <ul class="item item02">
+                                        <li class="title">Collections</li>
+                                        <li><a th:href="@{#}">Activity Books</a></li>
+                                        <li><a th:href="@{#}">Art, Crafts and Hobbies</a></li>
+                                        <li><a th:href="@{#}">Autobiography/Biography</a></li>
+                                        <li><a th:href="@{#}">Early Readers</a></li>
+                                        <li><a th:href="@{#}">Board Games and Puzzles</a></li>
+                                        <li><a th:href="@{#}">Cartooon Characters</a></li>
+                                        <li><a th:href="@{#}">Children's Fiction</a></li>
+                                        <li><a th:href="@{#}">Children's Gifts and Accessories</a></li>
+                                    </ul>
+                                    <ul class="item item03">
+                                        <li class="title">Collections</li>
+                                        <li><a th:href="@{#}">Educational and Fun Toys</a></li>
+                                        <li><a th:href="@{#}">Electronic Learning Toys</a></li>
+                                        <li><a th:href="@{#}">Motivational</a></li>
+                                        <li><a th:href="@{#}">Outdoors</a></li>
+                                        <li><a th:href="@{#}">Electronic Learning Toys</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a th:href="@{/#our-services}">Services</a></li>
+                            <li><a th:href="@{/gallery}">Gallery</a></li>
+                            <li><a th:href="@{/#about-us}">About</a></li>
+                            <li><a th:href="@{/#contact-us}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+                        <li class="shop_search"><a class="search__active" href="#"></a></li>
+                        <li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+                            <div class="searchbar__content setting__block">
+                                <div class="content-inner">
+                                    <div class="switcher-currency">
+                                        <strong class="label switcher-label">
+                                            <span>My Account</span>
+                                        </strong>
+                                        <div class="switcher-options">
+                                            <div class="switcher-currency-trigger">
+                                                <div class="setting__menu">
+                                                    <span><a th:href="@{/login}">Login</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Start Mobile Menu -->
+            <div class="row d-none">
+                <div class="col-lg-12 d-none">
+                    <nav class="mobilemenu__nav">
+                        <ul class="meninmenu">
+                            <li><a th:href="@{/}">Home</a></li>
+                            <li><a th:href="@{/shop/books}">Shop</a></li>
+                            <li><a th:href="@{/#our-services}">Services</a></li>
+                            <li><a th:href="@{/gallery}">Gallery</a></li>
+                            <li><a th:href="@{/#about-us}">About</a></li>
+                            <li><a th:href="@{/#contact-us}">Contact</a></li>
+                            <li><a th:href="@{/login}">My Account</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- End Mobile Menu -->
+            <div class="mobile-menu d-block d-lg-none">
+            </div>
+            <!-- Mobile Menu -->
+        </div>
+    </header>
+    <!-- //Header -->
+
+    <!-- Start Search Popup -->
+    <div class="box-search-content search_active block-bg close__top">
+        <form id="search_mini_form" class="minisearch" action="#">
+            <div class="field__search">
+                <input type="text" placeholder="Search entire store here...">
+                <div class="action">
+                    <a href="#"><i class="zmdi zmdi-search"></i></a>
+                </div>
+            </div>
+        </form>
+        <div class="close__wrap">
+            <span>close</span>
+        </div>
+    </div>
+    <!-- End Search Popup -->
+
+    <!-- Start Bradcaump area -->
+    <div class="ht__bradcaump__area bg-image--6">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">User Account</h2>
+                        <nav class="bradcaump-content">
+                            <a class="breadcrumb_item" th:href="@{/}">Home</a>
+                            <span class="brd-separetor">/</span>
+                            <span class="breadcrumb_item active">User Account</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Bradcaump area -->
+
+    <!-- Start Contact Area -->
+    <section class="wn_contact_area bg--white pt--80 pb--80">
+        <div class="container">
+            <div class="row" id="contact-us">
+                <div class="col-lg-12">
+                    <div class="section__title text-center">
+                        <h2  class="title__be--2">User <span class="color--theme">Account</span></h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                    <div class="contact-form-wrap">
+                        <div class="row" style="margin-top: 60px;">
+                            <div class="col-12">
+                                <!--Nav tabs-->
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item"><a class="nav-link" th:classappend="${classActiveLogin}? 'active'" href="#tab-1"
+                                                            data-toggle="tab"><span style="color: #353535; font-size: 12px;">Log in</span></a>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" th:classappend="${classActiveForgetPassword}? 'active'"
+                                                            href="#tab-2" data-toggle="tab"><span style="color: #353535; font-size: 12px;">Forget password</span></a>
+                                    </li>
+                                </ul>
+
+                                <!--Tab panels-->
+                                <div class="tab-content">
+                                    <!--log in-->
+                                    <div class="tab-pane fade" id="tab-1" th:classappend="${classActiveLogin}? 'show active'">
+                                        <div class="panel-group">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-body" style="margin-top: 20px;">
+                                                    <div th:if="${param.error != null}" style="color: red;">Incorrect username or password.</div>
+                                                    <form th:action="@{/login}" method="post">
+                                                        <div class="single-contact-form ">
+                                                            <label for="username">* Username:</label>
+                                                            <input required="required" type="text" class="form-control" id="username"
+                                                                   name="username"/>
+                                                            <p style="color: #828282;">Enter your username here.</p>
+                                                        </div>
+                                                        <div class="single-contact-form ">
+                                                            <label for="password">* Password:</label>
+                                                            <input required="required" type="password" class="form-control" id="password"
+                                                                   name="password"/>
+                                                            <p style="color: #828282;">Enter the password that accompanies your
+                                                                username.</p>
+                                                        </div>
+                                                        <div class="contact-btn">
+                                                            <button type="submit">Log In</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--forget password-->
+                                    <div class="tab-pane fade" id="tab-2" th:classappend="${classActiveForgetPassword}? 'show active'">
+                                        <div class="panel-group">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-body" style="margin-top: 20px;">
+                                                    <div th:if="${emailNotExist}" class="alert alert-danger">Email doesn't exist.</div>
+                                                    <div th:if="${forgetPasswordEmailSent}" class="alert alert-success">Email sent.</div>
+                                                    <form th:action="@{/forgetPassword}" method="post">
+                                                        <div class="single-contact-form ">
+                                                            <label for="recoverEmail">* Your Email:</label>
+                                                            <input required="required" type="text" class="form-control" id="recoverEmail"
+                                                                   name="email"/>
+                                                            <p style="color: #828282;">Enter your registered email address here.</p>
+                                                        </div>
+                                                        <div class="contact-btn">
+                                                            <button type="submit">Submit</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-output">
+                        <p class="form-messege">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 md-mt-40 sm-mt-40">
+                    <div class="wn__address">
+                        <h2 class="contact__title">Visit us today.</h2>
+
+                        <div class="wn__addres__wreapper">
+
+                            <div class="single__address">
+                                <i class="icon-location-pin icons"></i>
+                                <div class="content">
+                                    <span>Lagos address:</span>
+                                    <p>67, Isiba Oluwo, Egbeda Lagos.</p>
+                                </div>
+                            </div>
+
+                            <div class="single__address">
+                                <i class="icon-location-pin icons"></i>
+                                <div class="content">
+                                    <span>Abuja address:</span>
+                                    <p>House 2, Office of Accountant Quarters,
+                                        By NYSC Camp, Kubwa Village, Abuja.</p>
+                                </div>
+                            </div>
+
+                            <div class="single__address">
+                                <i class="icon-phone icons"></i>
+                                <div class="content">
+                                    <span>Phone Number:</span>
+                                    <p>0809800748</p>
+                                </div>
+                            </div>
+
+                            <div class="single__address">
+                                <i class="icon-envelope icons"></i>
+                                <div class="content">
+                                    <span>Email address:</span>
+                                    <p>deenbreedlagos@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="single__address">
+                                <i class="icon-globe icons"></i>
+                                <div class="content">
+                                    <span>website address:</span>
+                                    <p>www.deenbreedbookshop.com</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Area -->
+
+    <!-- Footer Area -->
+    <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+        <div class="footer-static-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__widget footer__menu">
+                            <div class="ft__logo">
+                                <a href="index.html">
+                                    <!-- company logo -->
+                                    <!--<img th:src="@{assets/images/logo/3.png}" alt="logo">-->
+                                </a>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                    have suffered duskam alteration variations of passages</p>
+                            </div>
+                            <div class="footer__content">
+                                <ul class="social__net social__net--2 d-flex justify-content-center">
+                                    <li><a th:href="@{#}"><i class="bi bi-facebook"></i></a></li>
+                                    <li><a th:href="@{#}"><i class="bi bi-google"></i></a></li>
+                                    <li><a th:href="@{#}"><i class="bi bi-twitter"></i></a></li>
+                                    <li><a th:href="@{#}"><i class="bi bi-linkedin"></i></a></li>
+                                    <li><a th:href="@{#}"><i class="bi bi-youtube"></i></a></li>
+                                </ul>
+                                <ul class="mainmenu d-flex justify-content-center">
+                                    <li><a th:href="@{#}">Trending</a></li>
+                                    <li><a th:href="@{#}">Best Seller</a></li>
+                                    <li><a th:href="@{#}">All Product</a></li>
+                                    <li><a th:href="@{#}">Wishlist</a></li>
+                                    <li><a th:href="@{#}">Blog</a></li>
+                                    <li><a th:href="@{/contact}">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="copyright">
+                            <div class="copy__right__inner text-left">
+                                <p>Copyright 2020 <i class="fa fa-copyright"></i> <a href="#">IntellisenseHUB.</a> All Rights
+                                    Reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //Footer Area -->
+
+</div><!--end of container-->
+
+
+
+<!-- JS Files -->
+<script th:src="@{assets/js/vendor/jquery3.2.1.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/plugins.js}"></script>
+<script th:src="@{assets/js/active.js}"></script>
+</body>
+</html>
