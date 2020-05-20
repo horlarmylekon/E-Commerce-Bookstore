@@ -9,6 +9,7 @@ public class Role {
 
     @Id
     private int roleId;
+
     private String name;
 
     @OneToMany(mappedBy = "role", cascade= CascadeType.ALL, fetch= FetchType.LAZY)
