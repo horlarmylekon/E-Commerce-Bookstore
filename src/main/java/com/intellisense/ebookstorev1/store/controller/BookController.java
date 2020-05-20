@@ -36,7 +36,7 @@ public class BookController {
     public String addBook(Model model) {
         Book book = new Book();
         model.addAttribute("book", book);
-        return "/admin/addBook";
+        return "admin/addBook";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
@@ -65,7 +65,7 @@ public class BookController {
         Book book = bookService.findOne(id);
         model.addAttribute("book", book);
 
-        return "/admin/bookInfo";
+        return "admin/bookInfo";
     }
 
     @RequestMapping("/updateBook")
@@ -73,7 +73,7 @@ public class BookController {
         Book book = bookService.findOne(id);
         model.addAttribute("book", book);
 
-        return "/admin/updateBook";
+        return "admin/updateBook";
     }
 
     @RequestMapping(value="/updateBook", method=RequestMethod.POST)
@@ -107,7 +107,7 @@ public class BookController {
         List<Book> bookList = bookService.findAll();
         model.addAttribute("bookList", bookList);
 
-        return "/admin/bookList";
+        return "admin/bookList";
     }
 
     @RequestMapping(value="/remove", method=RequestMethod.POST)

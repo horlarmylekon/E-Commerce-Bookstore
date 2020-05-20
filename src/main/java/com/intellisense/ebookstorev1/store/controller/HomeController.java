@@ -76,7 +76,7 @@ public class HomeController {
 
         if(user == null) {
             model.addAttribute("emailNotExist", true);
-            return "/bookstore/account";
+            return "bookstore/account";
         }
 
         String password = SecurityUtility.randomPassword();
@@ -98,7 +98,7 @@ public class HomeController {
 
         model.addAttribute("forgetPasswordEmailSent", "true");
 
-        return "/bookstore/account";
+        return "bookstore/account";
     }
 
     @RequestMapping("/shop/books")
@@ -130,7 +130,7 @@ public class HomeController {
         if(userService.findByUsername(username) != null) {
             model.addAttribute("usernameExists", true);
 
-            return "/bookstore/account";
+            return "bookstore/account";
         }
 
         if(userService.findByEmail(userEmail) != null) {
@@ -169,7 +169,7 @@ public class HomeController {
 
 //        model.addAttribute("orderList", user.getOrderList());
 
-        return "/bookstore/account";
+        return "bookstore/account";
     }
 
     @RequestMapping("/newUser")
