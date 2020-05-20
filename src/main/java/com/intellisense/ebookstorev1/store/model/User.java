@@ -33,19 +33,6 @@ public class User implements UserDetails {
     @JsonIgnore
     private Set<UserRole> userRoles = new HashSet<>();
 
-    public User() {}
-
-    public User(String username, String password, String firstName, String lastName, String email, String phone, boolean enabled, Set<UserRole> userRoles) {
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phone = phone;
-        this.enabled = enabled;
-        this.userRoles = userRoles;
-    }
-
     public Long getId() {
         return id;
     }
@@ -92,9 +79,11 @@ public class User implements UserDetails {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
     public Set<UserRole> getUserRoles() {
         return userRoles;
     }
+
     public void setUserRoles(Set<UserRole> userRoles) {
         this.userRoles = userRoles;
     }

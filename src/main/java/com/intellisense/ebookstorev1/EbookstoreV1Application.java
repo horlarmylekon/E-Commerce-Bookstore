@@ -11,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @SpringBootApplication
@@ -25,19 +26,25 @@ public class EbookstoreV1Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		User user1 = new User();
-		user1.setFirstName("Ismael");
-		user1.setLastName("Taiwo");
-		user1.setUsername("superadmin");
-		user1.setPassword(SecurityUtility.passwordEncoder().encode("password100"));
-		user1.setEmail("superadmin@gmail.com");
-		Set<UserRole> userRoles = new HashSet<>();
-		Role role1 = new Role();
-		role1.setRoleId(1);
-		role1.setName("ROLE_ADMIN");
-		userRoles.add(new UserRole(user1, role1));
+		User adminUser = new User();
+		adminUser.setFirstName("Ismael");
+		adminUser.setLastName("Taiwo");
+		adminUser.setUsername("superadmin");
+		adminUser.setPassword(SecurityUtility.passwordEncoder().encode("password100"));
+		adminUser.setEmail("superadmin@gmail.com");
 
-		userService.createUser(user1, userRoles);
+		Set<UserRole> userRoles = new HashSet<>();
+
+		// create a new role
+		Role adminRole = new Role();
+		adminRole.setRoleId(1);
+		adminRole.setName("ROLE_ADMIN");
+
+		// add created role to user
+		userRoles.add(new UserRole(adminUser, adminRole));
+
+		// create a new user
+		userService.createUser(adminUser, userRoles);
 	}
 
 }

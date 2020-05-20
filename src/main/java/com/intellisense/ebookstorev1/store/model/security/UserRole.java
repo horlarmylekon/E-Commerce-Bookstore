@@ -4,12 +4,17 @@ package com.intellisense.ebookstorev1.store.model.security;
 import com.intellisense.ebookstorev1.store.model.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
+@Table(name = "user_role")
 public class UserRole {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long userRoleId;
 
     @ManyToOne(fetch = FetchType.EAGER)
