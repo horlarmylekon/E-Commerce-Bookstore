@@ -21,7 +21,7 @@ public class UserRole {
     @JoinColumn(name="user_id")
     private User user;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="role_id")
     private Role role;
 
