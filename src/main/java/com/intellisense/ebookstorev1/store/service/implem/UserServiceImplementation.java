@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Set;
 
@@ -55,7 +56,7 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-//    @Transactional
+    @Transactional
     public User createUser(User user, Set<UserRole> userRoles){
         User localUser = userRepository.findByUsername(user.getUsername());
 
@@ -68,12 +69,6 @@ public class UserServiceImplementation implements UserService {
 
             user.getUserRoles().addAll(userRoles);
 
-//            ShoppingCart shoppingCart = new ShoppingCart();
-//            shoppingCart.setUser(user);
-//            user.setShoppingCart(shoppingCart);
-//
-//            user.setUserShippingList(new ArrayList<UserShipping>());
-//            user.setUserPaymentList(new ArrayList<UserPayment>());
 
             localUser = userRepository.save(user);
         }

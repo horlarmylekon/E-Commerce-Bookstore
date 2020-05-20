@@ -26,8 +26,8 @@ public class EbookstoreV1Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		User user1 = new User();
-		user1.setFirstName("Super");
-		user1.setLastName("Admin");
+		user1.setFirstName("Ismael");
+		user1.setLastName("Taiwo");
 		user1.setUsername("superadmin");
 		user1.setPassword(SecurityUtility.passwordEncoder().encode("password100"));
 		user1.setEmail("superadmin@gmail.com");
