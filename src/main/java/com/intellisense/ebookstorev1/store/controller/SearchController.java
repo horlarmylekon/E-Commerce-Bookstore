@@ -60,6 +60,7 @@ public class SearchController {
         if(principal != null) {
             String username = principal.getName();
             User user = userService.findByUsername(username);
+
             model.addAttribute("user", user);
         }
 
