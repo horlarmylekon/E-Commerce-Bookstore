@@ -31,7 +31,6 @@ import java.security.Principal;
 import java.util.*;
 
 @Controller
-@RequestMapping("/")
 public class HomeController {
 
     @Autowired
