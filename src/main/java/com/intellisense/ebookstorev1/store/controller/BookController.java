@@ -34,8 +34,6 @@ public class BookController {
     @Value("${folder.book}")
     String contentPath;
 
-    @Autowired
-    private CloundinaryService cloundinaryService;
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addBook(Model model) {
