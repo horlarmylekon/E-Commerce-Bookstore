@@ -3,7 +3,7 @@ package com.intellisense.ebookstorev1.store.service.implem;
 import com.intellisense.ebookstorev1.store.model.Book;
 import com.intellisense.ebookstorev1.store.repository.BookRepository;
 import com.intellisense.ebookstorev1.store.service.BookService;
-import org.apache.commons.lang3.StringUtils;
+//import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,18 +74,18 @@ public class BookServiceImplementation implements BookService {
         bookRepository.deleteById(id);
     }
 
-    @Override
-    public boolean isFileValid(String fileName) {
-        if(fileName!=null && !StringUtils.isEmpty(fileName)){
-            int lastIndexOfDot = fileName.lastIndexOf('.');
-            if(lastIndexOfDot != -1) {
-                String fileExtension = fileName.substring(lastIndexOfDot, fileName.length());
-                logger.info("the file extension {}", fileExtension);
-                if (StringUtils.equals(fileExtension, ".png") || StringUtils.equals(fileExtension, ".jpg") || StringUtils.equals(fileExtension, ".pdf")) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+//    @Override
+//    public boolean isFileValid(String fileName) {
+//        if(fileName!=null && !StringUtils.isEmpty(fileName)){
+//            int lastIndexOfDot = fileName.lastIndexOf('.');
+//            if(lastIndexOfDot != -1) {
+//                String fileExtension = fileName.substring(lastIndexOfDot, fileName.length());
+//                logger.info("the file extension {}", fileExtension);
+//                if (StringUtils.equals(fileExtension, ".png") || StringUtils.equals(fileExtension, ".jpg") || StringUtils.equals(fileExtension, ".pdf")) {
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
 }
