@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shop &dash; Deenbreed Bookshop and Education Resource Centre.</title>
+    <title>Successful Order &dash; Deenbreed Bookshop and Education Resource Centre.</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/icon.png">
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -26,11 +23,8 @@
     <!-- Cusom css -->
     <link rel="stylesheet" th:href="@{/assets/css/custom.css}">
 
-    <!-- data table -->
-    <link rel="stylesheet" type="text/css" th:href="@{/extra/css/datatables.min.css}"/>
-
     <!-- Modernizer js -->
-    <script th:src="@{/assets/js/vendor/modernizr-3.5.0.min.js}"></script>
+    <script th:src="@{assets/js/vendor/modernizr-3.5.0.min.js}"></script>
 </head>
 <body>
 <!-- Main wrapper -->
@@ -196,11 +190,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="bradcaump__inner text-center">
-                        <h2 class="bradcaump-title">Our Shop</h2>
+                        <h2 class="bradcaump-title">Order Notification</h2>
                         <nav class="bradcaump-content">
                             <a class="breadcrumb_item" th:href="@{/}">Home</a>
                             <span class="brd-separetor">/</span>
-                            <span class="breadcrumb_item active">Our Shop</span>
+                            <span class="breadcrumb_item active">Order Notification</span>
                         </nav>
                     </div>
                 </div>
@@ -209,100 +203,21 @@
     </div>
     <!-- End Bradcaump area -->
 
-    <!-- Start Shop Page -->
-    <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
-        <div class="container">
-            <div class="row" style="margin-top: 60px;">
-        <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
-            <div class="shop__sidebar">
-                <aside class="wedget__categories poroduct--cat">
-                    <h3 class="wedget__title">Product Categories</h3>
-                    <ul>
-                        <ul>
-                            <li><a th:href="@{/shop/books(category='all')}" th:classappend="${activeAll}? 'active'" >All</a></li>
-                            <li><a th:href="@{/shop/books/searchByCategory(category='Management')}" th:classappend="${activeManagement}? 'active'" >Management</a></li>
-                            <li> <a th:href="@{/shop/books/searchByCategory(category='Fiction')}" th:classappend="${activeFiction}? 'active'">Fiction</a></li>
-                            <li><a th:href="@{/shop/books/searchByCategory(category='Engineering')}" th:classappend="${activeEngineering}? 'active'">Engineering</a></li>
-                            <li><a th:href="@{/shop/books/searchByCategory(category='Programming')}" th:classappend="${activeProgramming}? 'active'">Programming</a></li>
-                            <li><a th:href="@{/shop/books/searchByCategory(category='Arts &amp; Literature')}" th:classappend="${activeArtsLiterature}? 'active'">Arts &amp; Literature</a></li>
-                        </ul>
-                    </ul>
-                </aside>
-                <aside class="wedget__categories pro--range">
-                    <h3 class="wedget__title">Filter by price</h3>
-                    <div class="content-shopby">
-                        <div class="price_filter s-filter clear">
-                            <form action="#" method="GET">
-                                <div id="slider-range"></div>
-                                <div class="slider__range--output">
-                                    <div class="price__output--wrap">
-                                        <div class="price--output">
-                                            <span>Price :</span><input type="text" id="amount" readonly="">
-                                        </div>
-                                        <div class="price--filter">
-                                            <a href="#">Filter</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </aside>
-                <aside class="wedget__categories poroduct--tag">
-                    <h3 class="wedget__title">Product Tags</h3>
-                    <ul>
-                        <li><a th:href="@{/shop/books(category='all')}" th:classappend="${activeAll}? 'active'" >All</a></li>
-                        <li><a th:href="@{/shop/books/searchByCategory(category='Management')}" th:classappend="${activeManagement}? 'active'" >Management</a></li>
-                        <li> <a th:href="@{/shop/books/searchByCategory(category='Fiction')}" th:classappend="${activeFiction}? 'active'">Fiction</a></li>
-                        <li><a th:href="@{/shop/books/searchByCategory(category='Engineering')}" th:classappend="${activeEngineering}? 'active'">Engineering</a></li>
-                        <li><a th:href="@{/shop/books/searchByCategory(category='Programming')}" th:classappend="${activeProgramming}? 'active'">Programming</a></li>
-                        <li><a th:href="@{/shop/books/searchByCategory(category='Arts &amp; Literature')}" th:classappend="${activeArtsLiterature}? 'active'">Arts &amp; Literature</a></li>
-                    </ul>
-                </aside>
-            </div>
-        </div>
-        <div class="col-lg-9 col-12 order-1 order-lg-2">
-            <div th:if="${emptyList}">
-                <h5 style="font-style: italic; color: red;">There are no products to list in this category.</h5>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-12 col-md-6 col-sm-offset-3">
+                <br><br> <h2 style="color:#0fad00">Success</h2>
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <!--<h3 th:text="${user.username}"></h3>-->
+                <p style="font-size:20px;color:#5C5C5C;">Thank you for your patronage.We have sent you an email.</span>
+                    confirming your order.
+                    Please visit our store for more.</p>
+                <a th:href="@{/}" class="btn btn-success"> Home </a>
+                <br><br>
             </div>
 
-            <table border="0" id="bookList" class="dataTable no-footer">
-                <thead><tr><th></th></tr></thead>
-                <tbody>
-                <tr class="book-item" data-th-each="book : ${bookList}">
-                    <td>
-                        <div th:if="${book != null}">
-                            <div class="row" style="margin-bottom: 50px;">
-                                <div class="col-3">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <a th:href="@{/bookDetail?id=}+${book.id}"><img class="img-fluid shelf-book" th:src="@{/extra/image/book/}+${book.id}+'.png'"/></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-9">
-                                    <a th:href="@{/bookDetail?id=}+${book.id}"><h4 th:text="${book.title}"></h4></a>
-                                    <span th:text="${book.publicationDate}"></span>
-                                    <p th:text="${book.author}"></p>
-                                    <a th:href="@{/bookDetail?id=}+${book.id}"><span th:text="${#strings.capitalize(book.format)}"></span></a>
-                                    <span th:text="${book.numberOfPages}"><span> pages</span></span><br/>
-
-                                    <a th:href="@{/bookDetail?id=}+${book.id}"><span style="font-size: x-large; color: #db3208;">#<span th:text="${#numbers.formatDecimal(book.ourPrice, 0, 'COMMA', 2, 'POINT')}"></span></span></a>
-                                    <span style="text-decoration: line-through;">#<span th:text="${#numbers.formatDecimal(book.listPrice, 0, 'COMMA', 2, 'POINT')}"></span></span>
-                                    <p><strong>Description: </strong><span th:utext="${#strings.abbreviate(book.description, 500)}"></span></p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
         </div>
     </div>
-        </div>
-    </div>
-    <!-- End Shop Page -->
 
     <!-- Footer Area -->
     <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
@@ -358,23 +273,5 @@
 <script th:src="@{assets/js/plugins.js}"></script>
 <script th:src="@{assets/js/active.js}"></script>
 
-<!-- data table -->
-<script type="text/javascript" th:src="@{extra/js/datatables.min.js}"></script>
-
-<script>
-    $(document).ready(function() {
-        $('#bookList').DataTable({
-            "lengthMenu": [ [5,10,15,20,-1], [5,10,15,20,"All"] ],
-            "ordering": false,
-            stateSave: true
-        });
-
-        $("#bookList").on('page.dt', function() {
-            $('html, body').animate({
-                scrollTop: $('#bookList').offset().top
-            }, 200);
-        });
-    });
-</script>
 </body>
 </html>

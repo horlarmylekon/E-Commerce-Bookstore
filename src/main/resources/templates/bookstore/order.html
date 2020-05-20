@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shop &dash; Deenbreed Bookshop and Education Resource Centre.</title>
+    <title>DeenBreed | Books Library eCommerce Store</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,7 +35,6 @@
 <body>
 <!-- Main wrapper -->
 <div class="wrapper" id="wrapper">
-
     <!-- Header -->
     <header id="wn__header" class="oth-page header__area header__absolute sticky__header">
         <div class="container-fluid">
@@ -196,11 +195,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="bradcaump__inner text-center">
-                        <h2 class="bradcaump-title">Our Shop</h2>
+                        <h2 class="bradcaump-title">Make Order</h2>
                         <nav class="bradcaump-content">
                             <a class="breadcrumb_item" th:href="@{/}">Home</a>
                             <span class="brd-separetor">/</span>
-                            <span class="breadcrumb_item active">Our Shop</span>
+                            <span class="breadcrumb_item active">Make Order</span>
                         </nav>
                     </div>
                 </div>
@@ -213,93 +212,142 @@
     <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
         <div class="container">
             <div class="row" style="margin-top: 60px;">
-        <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
-            <div class="shop__sidebar">
-                <aside class="wedget__categories poroduct--cat">
-                    <h3 class="wedget__title">Product Categories</h3>
-                    <ul>
-                        <ul>
-                            <li><a th:href="@{/shop/books(category='all')}" th:classappend="${activeAll}? 'active'" >All</a></li>
-                            <li><a th:href="@{/shop/books/searchByCategory(category='Management')}" th:classappend="${activeManagement}? 'active'" >Management</a></li>
-                            <li> <a th:href="@{/shop/books/searchByCategory(category='Fiction')}" th:classappend="${activeFiction}? 'active'">Fiction</a></li>
-                            <li><a th:href="@{/shop/books/searchByCategory(category='Engineering')}" th:classappend="${activeEngineering}? 'active'">Engineering</a></li>
-                            <li><a th:href="@{/shop/books/searchByCategory(category='Programming')}" th:classappend="${activeProgramming}? 'active'">Programming</a></li>
-                            <li><a th:href="@{/shop/books/searchByCategory(category='Arts &amp; Literature')}" th:classappend="${activeArtsLiterature}? 'active'">Arts &amp; Literature</a></li>
-                        </ul>
-                    </ul>
-                </aside>
-                <aside class="wedget__categories pro--range">
-                    <h3 class="wedget__title">Filter by price</h3>
-                    <div class="content-shopby">
-                        <div class="price_filter s-filter clear">
-                            <form action="#" method="GET">
-                                <div id="slider-range"></div>
-                                <div class="slider__range--output">
-                                    <div class="price__output--wrap">
-                                        <div class="price--output">
-                                            <span>Price :</span><input type="text" id="amount" readonly="">
+                <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
+                    <div class="shop__sidebar">
+                        <aside class="wedget__categories poroduct--cat">
+                            <h3 class="wedget__title">Product Categories</h3>
+                            <ul>
+                                <ul>
+                                    <li><a th:href="@{/shop/books(category='all')}" th:classappend="${activeAll}? 'active'" >All</a></li>
+                                    <li><a th:href="@{/shop/books/searchByCategory(category='Management')}" th:classappend="${activeManagement}? 'active'" >Management</a></li>
+                                    <li> <a th:href="@{/shop/books/searchByCategory(category='Fiction')}" th:classappend="${activeFiction}? 'active'">Fiction</a></li>
+                                    <li><a th:href="@{/shop/books/searchByCategory(category='Engineering')}" th:classappend="${activeEngineering}? 'active'">Engineering</a></li>
+                                    <li><a th:href="@{/shop/books/searchByCategory(category='Programming')}" th:classappend="${activeProgramming}? 'active'">Programming</a></li>
+                                    <li><a th:href="@{/shop/books/searchByCategory(category='Arts &amp; Literature')}" th:classappend="${activeArtsLiterature}? 'active'">Arts &amp; Literature</a></li>
+                                </ul>
+                            </ul>
+                        </aside>
+                        <aside class="wedget__categories pro--range">
+                            <h3 class="wedget__title">Filter by price</h3>
+                            <div class="content-shopby">
+                                <div class="price_filter s-filter clear">
+                                    <form action="#" method="GET">
+                                        <div id="slider-range"></div>
+                                        <div class="slider__range--output">
+                                            <div class="price__output--wrap">
+                                                <div class="price--output">
+                                                    <span>Price :</span><input type="text" id="amount" readonly="">
+                                                </div>
+                                                <div class="price--filter">
+                                                    <a href="#">Filter</a>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="price--filter">
-                                            <a href="#">Filter</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </aside>
-                <aside class="wedget__categories poroduct--tag">
-                    <h3 class="wedget__title">Product Tags</h3>
-                    <ul>
-                        <li><a th:href="@{/shop/books(category='all')}" th:classappend="${activeAll}? 'active'" >All</a></li>
-                        <li><a th:href="@{/shop/books/searchByCategory(category='Management')}" th:classappend="${activeManagement}? 'active'" >Management</a></li>
-                        <li> <a th:href="@{/shop/books/searchByCategory(category='Fiction')}" th:classappend="${activeFiction}? 'active'">Fiction</a></li>
-                        <li><a th:href="@{/shop/books/searchByCategory(category='Engineering')}" th:classappend="${activeEngineering}? 'active'">Engineering</a></li>
-                        <li><a th:href="@{/shop/books/searchByCategory(category='Programming')}" th:classappend="${activeProgramming}? 'active'">Programming</a></li>
-                        <li><a th:href="@{/shop/books/searchByCategory(category='Arts &amp; Literature')}" th:classappend="${activeArtsLiterature}? 'active'">Arts &amp; Literature</a></li>
-                    </ul>
-                </aside>
-            </div>
-        </div>
-        <div class="col-lg-9 col-12 order-1 order-lg-2">
-            <div th:if="${emptyList}">
-                <h5 style="font-style: italic; color: red;">There are no products to list in this category.</h5>
-            </div>
-
-            <table border="0" id="bookList" class="dataTable no-footer">
-                <thead><tr><th></th></tr></thead>
-                <tbody>
-                <tr class="book-item" data-th-each="book : ${bookList}">
-                    <td>
-                        <div th:if="${book != null}">
-                            <div class="row" style="margin-bottom: 50px;">
-                                <div class="col-3">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <a th:href="@{/bookDetail?id=}+${book.id}"><img class="img-fluid shelf-book" th:src="@{/extra/image/book/}+${book.id}+'.png'"/></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-9">
-                                    <a th:href="@{/bookDetail?id=}+${book.id}"><h4 th:text="${book.title}"></h4></a>
-                                    <span th:text="${book.publicationDate}"></span>
-                                    <p th:text="${book.author}"></p>
-                                    <a th:href="@{/bookDetail?id=}+${book.id}"><span th:text="${#strings.capitalize(book.format)}"></span></a>
-                                    <span th:text="${book.numberOfPages}"><span> pages</span></span><br/>
-
-                                    <a th:href="@{/bookDetail?id=}+${book.id}"><span style="font-size: x-large; color: #db3208;">#<span th:text="${#numbers.formatDecimal(book.ourPrice, 0, 'COMMA', 2, 'POINT')}"></span></span></a>
-                                    <span style="text-decoration: line-through;">#<span th:text="${#numbers.formatDecimal(book.listPrice, 0, 'COMMA', 2, 'POINT')}"></span></span>
-                                    <p><strong>Description: </strong><span th:utext="${#strings.abbreviate(book.description, 500)}"></span></p>
-
+                                    </form>
                                 </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+                        </aside>
+                        <aside class="wedget__categories poroduct--tag">
+                            <h3 class="wedget__title">Product Tags</h3>
+                            <ul>
+                                <li><a th:href="@{/shop/books(category='all')}" th:classappend="${activeAll}? 'active'" >All</a></li>
+                                <li><a th:href="@{/shop/books/searchByCategory(category='Management')}" th:classappend="${activeManagement}? 'active'" >Management</a></li>
+                                <li> <a th:href="@{/shop/books/searchByCategory(category='Fiction')}" th:classappend="${activeFiction}? 'active'">Fiction</a></li>
+                                <li><a th:href="@{/shop/books/searchByCategory(category='Engineering')}" th:classappend="${activeEngineering}? 'active'">Engineering</a></li>
+                                <li><a th:href="@{/shop/books/searchByCategory(category='Programming')}" th:classappend="${activeProgramming}? 'active'">Programming</a></li>
+                                <li><a th:href="@{/shop/books/searchByCategory(category='Arts &amp; Literature')}" th:classappend="${activeArtsLiterature}? 'active'">Arts &amp; Literature</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 col-12 order-1 order-lg-2">
+
+                    <div>
+                        <form th:action="@{/book/order/new}" method="post">
+                            <div class="form-row">
+                                <div class="form-group col-lg-12 col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <button type="submit" class="btn btn-warning btn-block">Place your order</button>
+                                            <p style="font-size: smaller;">By placing your order, you agree to Deenbreed's Bookstore <a href="#">pricacy</a>
+                                                notice and <a href="#">conditions</a> of use.</p>
+                                            <hr/>
+                                            <h3>Order Summary</h3>
+                                        </div>
+                                    </div>
+
+                                    <input hidden="hidden" name="id" th:value="${book.id}"/>
+
+                                    <fieldset>
+                                        <legend class="center-block">Book Information</legend>
+
+                                        <<!-- title -->
+                                        <div class="single-contact-form ">
+                                            <label for="title">* Title</label>
+                                            <input type="text" name="title" class="form-control" id="title" th:value="${book.title}"
+                                                   required="required" placeholder="Title" readonly="readonly"/>
+                                            <p style="color: #828282;">Title of the book.</p>
+                                        </div>
+
+
+                                        <!-- author -->
+                                        <div class="single-contact-form ">
+                                            <label for="author">* Author</label>
+                                            <input type="text" name="author" class="form-control" id="author" th:value="${book.author}"
+                                                   required="required" placeholder="Author" readonly="readonly"/>
+                                            <p style="color: #828282;">Author of the book.</p>
+                                        </div>
+
+
+                                        <!-- publisher -->
+                                        <div class="single-contact-form ">
+                                            <label for="publisher">Publisher</label>
+                                            <input type="text" name="publisher" class="form-control" id="publisher"
+                                                   th:value="${book.publisher}" placeholder="Publisher" readonly="readonly"/>
+                                            <p style="color: #828282;">Publisher of the book.</p>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <legend class="center-block">Personal Information</legend>
+
+                                        <!-- email -->
+                                        <div class="single-contact-form ">
+                                            <label for="email">Email</label>
+                                            <input type="text" name="email" class="form-control" id="email"
+                                                   placeholder="Email Address"/>
+                                            <p style="color: #828282;">Enter valid email.</p>
+                                        </div>
+
+                                        <!-- number -->
+                                        <div class="single-contact-form ">
+                                            <label for="number">Phone Number</label>
+                                            <input type="number" name="number" class="form-control" id="number"
+                                                   placeholder="08000000000"/>
+                                            <p style="color: #828282;">Enter valid Phone Number.</p>
+                                        </div>
+
+                                        <!-- quatity -->
+                                        <div class="single-contact-form ">
+                                            <label for="quatity">Quatity Order</label>
+                                            <input type="number" name="quatity" class="form-control" id="quatity"/>
+                                            <p style="color: #828282;">Enter the Number of Quatity Needed.</p>
+                                        </div>
+
+                                    </fieldset>
+
+                                    <br>
+                                    <button type="submit" class="btn btn-warning btn-block">Place your order</button>
+                                    <p style="font-size: smaller;">By placing your order, you agree to Deenbreed's Bookstore <a
+                                            href="#">pricacy</a>
+                                        notice and <a href="#">conditions</a> of use.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- End Shop Page -->
@@ -312,7 +360,7 @@
                     <div class="col-lg-12">
                         <div class="footer__widget footer__menu">
                             <div class="ft__logo">
-                                <a th:href="@{/}">
+                                <a href="index.html">
                                     <!--<img th:src="@{assets/images/logo/3.png}" alt="logo">-->
                                 </a>
                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority
@@ -358,23 +406,5 @@
 <script th:src="@{assets/js/plugins.js}"></script>
 <script th:src="@{assets/js/active.js}"></script>
 
-<!-- data table -->
-<script type="text/javascript" th:src="@{extra/js/datatables.min.js}"></script>
-
-<script>
-    $(document).ready(function() {
-        $('#bookList').DataTable({
-            "lengthMenu": [ [5,10,15,20,-1], [5,10,15,20,"All"] ],
-            "ordering": false,
-            stateSave: true
-        });
-
-        $("#bookList").on('page.dt', function() {
-            $('html, body').animate({
-                scrollTop: $('#bookList').offset().top
-            }, 200);
-        });
-    });
-</script>
 </body>
 </html>
