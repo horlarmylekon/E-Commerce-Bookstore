@@ -31,9 +31,6 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    @Value("${folder.book}")
-    String contentPath;
-
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addBook(Model model) {
