@@ -61,7 +61,7 @@ public class HomeController {
     @RequestMapping("/login")
     public String login(Model model) {
         model.addAttribute("classActiveLogin", true);
-        return "/bookstore/account";
+        return "bookstore/account";
     }
 
     @RequestMapping("/forgetPassword")
