@@ -41,7 +41,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
             "/fonts/**",
             "/bookDetail/**",
             "/searchByCategory",
-            "/searchBook"
+            "/searchBook",
+            "/shop/extra/js/datatables.min.js"
     };
 
     @Override
