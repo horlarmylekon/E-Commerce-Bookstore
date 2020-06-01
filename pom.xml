@@ -82,11 +82,17 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.intellisense</groupId>-->
-            <!--<artifactId>ebookstore-v1</artifactId>-->
-            <!--<version>0.0.1-SNAPSHOT</version>-->
-        <!--</dependency>-->
+		<!-- https://mvnrepository.com/artifact/com.cloudinary/cloudinary-core -->
+		<dependency>
+			<groupId>com.cloudinary</groupId>
+			<artifactId>cloudinary-http44</artifactId>
+			<version>1.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cloudinary</groupId>
+			<artifactId>cloudinary-taglib</artifactId>
+			<version>1.4.1</version>
+		</dependency>
     </dependencies>
 
 	<build>

@@ -19,5 +19,5 @@ public interface BookService {
 
     void removeOne(Long id);
 
-//    boolean isFileValid(String fileName);
+    boolean isFileValid(String fileName);
 }

@@ -1,16 +1,15 @@
 package com.intellisense.ebookstorev1.ultility;
 
+import com.intellisense.ebookstorev1.store.exception.APPException;
 import com.intellisense.ebookstorev1.store.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.TemplateEngine;
 
-import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Locale;
 
@@ -58,13 +57,13 @@ public class MailConstructor {
 
         return new MimeMessagePreparator() {
             @Override
-            public void prepare(MimeMessage mimeMessage) throws Exception {
+            public void prepare(MimeMessage mimeMessage) throws APPException {
 
-                MimeMessageHelper email = new MimeMessageHelper(mimeMessage);
-                email.setTo(user.getEmail());
-                email.setSubject("Order Confirmation - " + user.getUsername());
-                email.setText(text, true);
-                email.setFrom(new InternetAddress("deenbreedlagos@gmail.com"));
+//                MimeMessageHelper email = new MimeMessageHelper(mimeMessage);
+//                email.setTo(user.getEmail());
+//                email.setSubject("Order Confirmation - " + user.getUsername());
+//                email.setText(text, true);
+//                email.setFrom(new InternetAddress("deenbreedlagos@gmail.com"));
             }
         };
     }

@@ -1,6 +1,5 @@
 package com.intellisense.ebookstorev1.store.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
@@ -29,13 +28,8 @@ public class Book {
     private String description;
     private int inStockNumber;
 
-    @Transient
-    private MultipartFile bookImage;
+    private String bookImage;
 
-
-//    @OneToMany(mappedBy = "book")
-//    @JsonIgnore
-//    private List<BookToCartItem> bookToCartItemList;
 
     public Long getId() {
         return id;
@@ -157,20 +151,11 @@ public class Book {
         this.inStockNumber = inStockNumber;
     }
 
-    public MultipartFile getBookImage() {
+    public String getBookImage() {
         return bookImage;
     }
 
-    public void setBookImage(MultipartFile bookImage) {
+    public void setBookImage(String bookImage) {
         this.bookImage = bookImage;
     }
-
-
-    //    public List<BookToCartItem> getBookToCartItemList() {
-//        return bookToCartItemList;
-//    }
-//
-//    public void setBookToCartItemList(List<BookToCartItem> bookToCartItemList) {
-//        this.bookToCartItemList = bookToCartItemList;
-//    }
 }

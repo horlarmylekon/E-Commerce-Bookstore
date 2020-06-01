@@ -7,7 +7,7 @@
 <div th:replace="common/header :: navbar"/>
 
 <div class="container">
-        <form th:action="@{/admin/book/add}" method="post" enctype="multipart/form-data">
+        <form th:action="@{/admin/book/add}" method="post" th:object="${book}" enctype="multipart/form-data">
             <fieldset>
                 <legend class="center-block">New Book Information<span
                         style="font-size: small"> * is a required field</span></legend>
@@ -193,7 +193,7 @@
                         <label for="bookImage">Upload book image</label>
                     </div>
                     <div class="col-md-8">
-                        <input id="bookImage" type="file" name="bookImage" th:value="${book.bookImage}"/>
+                        <input id="bookImage" type="file" name="bookImage"/>
                     </div>
                 </div>
 
