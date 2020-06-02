@@ -38,7 +38,7 @@ public class BookController {
 
     @Autowired
     @Qualifier("cloudinary")
-    FileUploader uploaderSvc;
+    private FileUploader uploaderSvc;
 
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)

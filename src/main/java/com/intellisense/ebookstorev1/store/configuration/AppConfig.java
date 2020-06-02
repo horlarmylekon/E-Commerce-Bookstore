@@ -3,6 +3,7 @@ package com.intellisense.ebookstorev1.store.configuration;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.intellisense.ebookstorev1.store.prop.AppProp;
+import com.intellisense.ebookstorev1.store.service.FileUploader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,4 +28,5 @@ public class AppConfig {
 
         return new Cloudinary(ConfigMap);
     }
+
 }

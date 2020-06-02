@@ -6,7 +6,9 @@ import com.intellisense.ebookstorev1.store.exception.APPException;
 import com.intellisense.ebookstorev1.store.prop.AppProp;
 import com.intellisense.ebookstorev1.store.service.FileUploader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -14,6 +16,7 @@ import java.util.Map;
 
 @Service("cloudinary")
 public class CloudinaryFileUploader implements FileUploader {
+
     @Autowired
     Cloudinary cloudinary;
 
