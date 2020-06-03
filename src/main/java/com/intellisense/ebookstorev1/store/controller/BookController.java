@@ -2,9 +2,11 @@ package com.intellisense.ebookstorev1.store.controller;
 
 import com.intellisense.ebookstorev1.store.model.Book;
 import com.intellisense.ebookstorev1.store.service.BookService;
+import com.intellisense.ebookstorev1.store.service.FileUploader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +23,7 @@ import java.io.FileOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/admin/book")
@@ -31,6 +34,9 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
+    @Autowired
+    @Qualifier("cloudinary")
+    FileUploader uploaderSvc;
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addBook(Model model) {
@@ -48,6 +54,17 @@ public class BookController {
 
         try {
             byte[] bytes = bookImage.getBytes();
+
+            //Clo..
+            Map res = uploaderSvc.upload(bookImage);
+            String disposableUrl = (String) res.get("url");
+            String publicId = (String) res.get("public_id");
+            String height = (String) res.get("height");
+            String width = (String) res.get("width");
+            String type = (String) res.get("format");
+            String size = (String) res.get("bytes"); //byte
+            //Clo.. end
+
             String name = book.getId() + ".png";
             BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File("src/main/resources/static/extra/image/book/" + name)));
             stream.write(bytes);
