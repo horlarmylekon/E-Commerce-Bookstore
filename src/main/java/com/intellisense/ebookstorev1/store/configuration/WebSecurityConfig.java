@@ -42,7 +42,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
             "/bookDetail/**",
             "/searchByCategory",
             "/searchBook",
-            "/shop/extra/js/datatables.min.js"
+            "/shop/extra/js/datatables.min.js",
+            "/cloudinary/**"
     };
 
     @Override
