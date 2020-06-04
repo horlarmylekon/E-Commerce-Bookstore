@@ -20,6 +20,18 @@ public class CloudinaryFileUploader implements FileUploader {
     @Autowired
     AppProp prop;
 
+    private Map directByteUpload(byte[] raw, Map params){
+
+        Map res = null;
+        try {
+            res = cloudinary.uploader().upload(raw, params);
+        } catch (IOException e) {
+            throw new APPException(e.getMessage());
+        }
+        return res;
+    }
+
+
     @Override
     public Map upload(MultipartFile file) {
         String id = System.currentTimeMillis() +"_"+ file.getName();
@@ -29,13 +41,23 @@ public class CloudinaryFileUploader implements FileUploader {
                 "resource_type", "auto"
         );
 
-        Map res = null;
         try {
-            res = cloudinary.uploader().upload(file.getBytes(), params);
+            return directByteUpload(file.getBytes(), params);
         } catch (IOException e) {
             throw new APPException(e.getMessage());
         }
-        return res;
+    }
+
+    @Override
+    public Map upload(byte[] raw, String name) {
+        String id = System.currentTimeMillis() +"_"+ name;
+        Map params = ObjectUtils.asMap(
+                "public_id", prop.CLOUDINARY_UPLOAD_PATH + "/" + id,
+                "overwrite", true,
+                "resource_type", "auto"
+        );
+
+        return directByteUpload(raw, params);
     }
 
     @Override
