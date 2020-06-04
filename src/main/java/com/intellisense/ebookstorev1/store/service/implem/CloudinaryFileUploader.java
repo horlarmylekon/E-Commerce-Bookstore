@@ -61,6 +61,19 @@ public class CloudinaryFileUploader implements FileUploader {
     }
 
     @Override
+    public Boolean destroy(String publicId) {
+        try {
+            Map res = cloudinary.uploader().destroy(publicId, ObjectUtils.emptyMap());
+            if(String.valueOf(res.get("result")).toLowerCase().equals("ok"))
+                return true;
+        } catch (IOException e) {
+            throw new APPException(e.getMessage());
+        }
+
+        return false;
+    }
+
+    @Override
     public void validate(MultipartFile file) {
 
     }
