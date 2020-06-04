@@ -7,6 +7,6 @@ import java.util.Map;
 public interface FileUploader {
 
     Map upload(MultipartFile file);
-    Map upload(Byte[] file);
+    Map upload(byte[] file);
     void validate(MultipartFile file);
 }
