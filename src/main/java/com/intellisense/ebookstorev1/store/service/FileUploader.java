@@ -8,5 +8,6 @@ public interface FileUploader {
 
     Map upload(MultipartFile file);
     Map upload(byte[] file, String name);
+    Boolean destroy(String name);
     void validate(MultipartFile file);
 }
