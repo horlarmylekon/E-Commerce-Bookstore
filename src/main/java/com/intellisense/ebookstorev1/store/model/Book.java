@@ -28,6 +28,7 @@ public class Book {
     private String description;
     private int inStockNumber;
 
+    private String public_id;
     private String bookImage;
 
 
@@ -157,5 +158,13 @@ public class Book {
 
     public void setBookImage(String bookImage) {
         this.bookImage = bookImage;
+    }
+
+    public String getPublic_id() {
+        return public_id;
+    }
+
+    public void setPublic_id(String public_id) {
+        this.public_id = public_id;
     }
 }
