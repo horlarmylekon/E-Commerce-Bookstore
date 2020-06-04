@@ -1,5 +1,6 @@
 package com.intellisense.ebookstorev1.store.controller;
 
+import com.cloudinary.utils.ObjectUtils;
 import com.intellisense.ebookstorev1.store.model.Book;
 import com.intellisense.ebookstorev1.store.service.BookService;
 import com.intellisense.ebookstorev1.store.service.FileUploader;
@@ -24,6 +25,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/admin/book")
@@ -38,6 +40,7 @@ public class BookController {
     @Qualifier("cloudinary")
     FileUploader uploaderSvc;
 
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addBook(Model model) {
         Book book = new Book();
@@ -48,15 +51,12 @@ public class BookController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addBookPost(@ModelAttribute("book") Book book, HttpServletRequest request) {
 
-        bookService.save(book);
-
-        MultipartFile bookImage = book.getBookImage();
+        byte[] bookImage = book.getBookImage().getBytes();
 
         try {
-            byte[] bytes = bookImage.getBytes();
 
             //Clo..
-            Map res = uploaderSvc.upload(bookImage);
+            Map res = uploaderSvc.upload(bookImage, book.getBookImage().toLowerCase());
             String disposableUrl = (String) res.get("url");
             String publicId = (String) res.get("public_id");
             String height = (String) res.get("height");
@@ -65,14 +65,13 @@ public class BookController {
             String size = (String) res.get("bytes"); //byte
             //Clo.. end
 
-            String name = book.getId() + ".png";
-            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File("src/main/resources/static/extra/image/book/" + name)));
-            stream.write(bytes);
-            stream.close();
+            book.setBookImage(disposableUrl);
+            book.setPublicId(publicId);
+            bookService.save(book);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
         return "redirect:bookList";
     }
@@ -96,25 +95,29 @@ public class BookController {
     @RequestMapping(value="/updateBook", method=RequestMethod.POST)
     public String updateBookPost(@ModelAttribute("book") Book book, HttpServletRequest request) {
 
-        MultipartFile bookImage = book.getBookImage();
+        byte[] raw = book.getBookImage().getBytes();
 
-        if(!bookImage.isEmpty()) {
+        if(!book.getBookImage().isEmpty()) {
             try {
-                byte[] bytes = bookImage.getBytes();
-                String name = book.getId() + ".png";
 
-                Files.delete(Paths.get("src/main/resources/static/extra/image/book/"+name));
+                //Delete
+                String pk_bk = bookService.findOne(book.getId()).getPublicId();
+                uploaderSvc.destroy(pk_bk);
 
-                BufferedOutputStream stream = new BufferedOutputStream(
-                        new FileOutputStream(new File("src/main/resources/static/extra/image/book/" + name)));
-                stream.write(bytes);
-                stream.close();
+                //Save
+                Map res = uploaderSvc.upload(raw, book.getBookImage().toLowerCase());
+                String disposableUrl = (String) res.get("url");
+                String publicId = (String) res.get("public_id");
+
+                book.setBookImage(disposableUrl);
+                book.setPublicId(publicId);
+                bookService.save(book);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         bookService.save(book);
-
 
         return "redirect:/admin/book/bookInfo?id="+book.getId();
     }

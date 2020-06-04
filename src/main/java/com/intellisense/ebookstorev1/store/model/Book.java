@@ -160,11 +160,11 @@ public class Book {
         this.bookImage = bookImage;
     }
 
-    public String getPublic_id() {
+    public String getPublicId() {
         return public_id;
     }
 
-    public void setPublic_id(String public_id) {
+    public void setPublicId(String public_id) {
         this.public_id = public_id;
     }
 }
