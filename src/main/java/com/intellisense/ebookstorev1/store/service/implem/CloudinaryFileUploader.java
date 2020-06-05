@@ -6,6 +6,7 @@ import com.intellisense.ebookstorev1.store.exception.APPException;
 import com.intellisense.ebookstorev1.store.prop.AppProp;
 import com.intellisense.ebookstorev1.store.service.FileUploader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

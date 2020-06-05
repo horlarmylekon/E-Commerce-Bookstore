@@ -4,9 +4,11 @@ import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.intellisense.ebookstorev1.store.prop.AppProp;
 import com.intellisense.ebookstorev1.store.service.FileUploader;
+import com.intellisense.ebookstorev1.store.service.implem.CloudinaryFileUploader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import java.util.Map;
 
@@ -28,5 +30,6 @@ public class AppConfig {
 
         return new Cloudinary(ConfigMap);
     }
+
 
 }
