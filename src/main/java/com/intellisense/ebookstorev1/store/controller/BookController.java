@@ -3,29 +3,19 @@ package com.intellisense.ebookstorev1.store.controller;
 import com.cloudinary.utils.ObjectUtils;
 import com.intellisense.ebookstorev1.store.model.Book;
 import com.intellisense.ebookstorev1.store.service.BookService;
-import com.intellisense.ebookstorev1.store.service.FileUploader;
+import com.intellisense.ebookstorev1.store.service.implem.CloudinaryFileUploaderSvc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/admin/book")
@@ -37,8 +27,7 @@ public class BookController {
     BookService bookService;
 
     @Autowired
-    @Qualifier("cloudinary_svc")
-    FileUploader uploaderSvc;
+    CloudinaryFileUploaderSvc uploaderSvc;
 
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
