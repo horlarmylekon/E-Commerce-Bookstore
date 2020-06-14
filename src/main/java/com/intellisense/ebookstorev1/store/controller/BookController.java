@@ -34,11 +34,11 @@ public class BookController {
     private Logger logger= LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private BookService bookService;
+    BookService bookService;
 
     @Autowired
-    @Qualifier("cloudinary")
-    private FileUploader uploaderSvc;
+    @Qualifier("cloudinary_svc")
+    FileUploader uploaderSvc;
 
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
