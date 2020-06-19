@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Deenbreed Bookshop and Education Resource Centre.</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <!-- Todo -->
+
+    <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" th:href="@{assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{assets/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{assets/css/plugins.css}">
+    <link rel="stylesheet" th:href="@{assets/css/style.css}">
+
+    <!-- Cusom css -->
+    <link rel="stylesheet" th:href="@{assets/css/custom.css}">
+
+    <!-- Modernizer js -->
+    <script th:src="@{assets/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+<body>
+
+    <!-- Main wrapper -->
+    <div class="wrapper" id="wrapper">
+        <!-- Header -->
+        <header id="wn__header" class="header__area header__absolute">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                        <div class="logo">
+                            <a href="index.html">
+                                <!-- company logo -->
+                                <img th:src="@{assets/images/logo/logo.png}" style="width: 70px;" alt="logo images">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 d-none d-lg-block">
+                        <nav class="mainmenu__nav">
+                            <ul class="meninmenu d-flex justify-content-start">
+                                <li class="drop with--one--item"><a th:href="@{/}">Home</a></li>
+                                <li class="drop with--one--item"><a th:href="@{/shop/books}">Shop</a></li>
+                                <li class="drop"><a href="#">Books</a>
+                                    <div class="megamenu mega03">
+                                        <ul class="item item03">
+                                            <li class="title">Categories</li>
+                                            <li><a th:href="@{#}">Accounting </a></li>
+                                            <li><a th:href="@{#}">Architecture </a></li>
+                                            <li><a th:href="@{#}">Art and Culture </a></li>
+                                            <li><a th:href="@{#}">Autobiography/Biography </a></li>
+                                            <li><a th:href="@{#}">Business </a></li>
+                                            <li><a th:href="@{#}">Cooking/Food </a></li>
+                                            <li><a th:href="@{#}">Development </a></li>
+                                            <li><a th:href="@{#}">Economics </a></li>
+                                            <li><a th:href="@{#}">Engineering</a></li>
+                                            <li><a th:href="@{#}">Fiction</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Categories</li>
+                                            <li><a th:href="@{#}">Finance </a></li>
+                                            <li><a th:href="@{#}">History</a></li>
+                                            <li><a th:href="@{#}">Law </a></li>
+                                            <li><a th:href="@{#}">Medicine </a></li>
+                                            <li><a th:href="@{#}">New Books</a></li>
+                                            <li><a th:href="@{#}">Philosophy</a></li>
+                                            <li><a th:href="@{#}">Politics </a></li>
+                                            <li><a th:href="@{#}">Religion</a></li>
+                                            <li><a th:href="@{#}">Sport</a></li>
+                                            <li><a th:href="@{#}">Fiction</a></li>
+                                        </ul>
+                                        <ul class="item item01">
+                                            <li class="title">Categories</li>
+                                            <li><a th:href="@{#}">Finance </a></li>
+                                            <li><a th:href="@{#}">History</a></li>
+                                            <li><a th:href="@{#}">Law </a></li>
+                                            <li><a th:href="@{#}">Medicine </a></li>
+                                            <li><a th:href="@{#}">New Books</a></li>
+                                            <li><a th:href="@{#}">Philosophy</a></li>
+                                            <li><a th:href="@{#}">Politics </a></li>
+                                            <li><a th:href="@{#}">Religion</a></li>
+                                            <li><a th:href="@{#}">Sport</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="#">Kids</a>
+                                    <div class="megamenu mega02">
+                                        <ul class="item item02">
+                                            <li class="title">Collections</li>
+                                            <li><a th:href="@{#}">Activity Books</a></li>
+                                            <li><a th:href="@{#}">Art, Crafts and Hobbies</a></li>
+                                            <li><a th:href="@{#}">Autobiography/Biography</a></li>
+                                            <li><a th:href="@{#}">Early Readers</a></li>
+                                            <li><a th:href="@{#}">Board Games and Puzzles</a></li>
+                                            <li><a th:href="@{#}">Cartooon Characters</a></li>
+                                            <li><a th:href="@{#}">Children's Fiction</a></li>
+                                            <li><a th:href="@{#}">Children's Gifts and Accessories</a></li>
+
+                                        </ul>
+                                        <ul class="item item03">
+                                            <li class="title">Collections</li>
+                                            <li><a th:href="@{#}">Educational and Fun Toys</a></li>
+                                            <li><a th:href="@{#}">Electronic Learning Toys</a></li>
+                                            <li><a th:href="@{#}">Motivational</a></li>
+                                            <li><a th:href="@{#}">Outdoors</a></li>
+                                            <li><a th:href="@{#}">Electronic Learning Toys</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a th:href="@{/gallery}">Gallery</a></li>
+                                <li><a href="#about-us">About</a></li>
+                                <li><a href="#our-services">Services</a></li>
+                                <li><a href="#contact-us">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                        <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+                            <li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+                                <div class="searchbar__content setting__block">
+                                    <div class="content-inner">
+                                        <div class="switcher-currency">
+                                            <strong class="label switcher-label">
+                                                <span>My Account</span>
+                                            </strong>
+                                            <div class="switcher-options">
+                                                <div class="switcher-currency-trigger">
+                                                    <div class="setting__menu">
+                                                        <span><a th:href="@{/login}">Login</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Start Mobile Menu -->
+                <div class="row d-none">
+                    <div class="col-lg-12 d-none">
+                        <nav class="mobilemenu__nav">
+                            <ul class="meninmenu">
+                                <li><a th:href="@{/}">Home</a></li>
+                                <li><a th:href="@{/shop/books}">Shop</a></li>
+                                <li><a th:href="@{/gallery}">Gallery</a></li>
+                                <li><a href="#about-us">About US</a></li>
+                                <li><a href="#our-services">Services</a></li>
+                                <li><a href="#contact-us">Contact</a></li>
+                                <li><a th:href="@{/login}">My Account</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- End Mobile Menu -->
+                <div class="mobile-menu d-block d-lg-none">
+                </div>
+                <!-- Mobile Menu -->
+            </div>
+        </header>
+        <!-- //Header -->
+
+        <!-- Start Slider area -->
+        <div class="slider-area brown__nav slider--15 slide__activation slide__arrow01 owl-carousel owl-theme">
+            <!-- Start Single Slide -->
+            <div class="slide animation__style10 bg-image--1 fullscreen align__center--left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="slider__content">
+                                <div class="contentbox">
+                                    <h2>Buy <span>your </span></h2>
+                                    <h2>favourite <span>Book </span></h2>
+                                    <h2>from <span>Here </span></h2>
+                                    <a class="shopbtn" th:href="@{/shop/books}">shop now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Slide -->
+            <!-- Start Single Slide -->
+            <div class="slide animation__style10 bg-image--7 fullscreen align__center--left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="slider__content">
+                                <div class="contentbox">
+                                    <h2>Buy <span>your </span></h2>
+                                    <h2>favourite <span>Book </span></h2>
+                                    <h2>from <span>Here </span></h2>
+                                    <a class="shopbtn" th:href="@{/shop/books}">shop now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Slide -->
+        </div>
+        <!-- End Slider area -->
+
+
+        <!-- Start About Us Area -->
+        <section class="wn__recent__post bg--gray ptb--80">
+            <div class="container">
+                <div class="row" id="about-us">
+                    <div class="col-lg-12">
+                        <div class="section__title text-center">
+                            <h2  class="title__be--2">About <span class="color--theme">Us</span></h2>
+                            <p>Ours is a noble responsibility: that of nourishing the minds of our readers with endless knowledge.
+                                For close to 10 years, this has been our chief goal. We pride ourselves in having
+                                an unrivaled range of books that are  rare to find in Nigeria or in the region.
+                                We are your go-to bookstore whether you are looking for an interesting novel,
+                                or a provocative local memoir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt--50">
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a th:href="@{#}">Our Goal</a>
+                                </h3>
+                                <p>Supporting the breeding of well groomed children with sound academic foundation well
+                                    blended with sublime character add value to humanity and it dynamic.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a th:href="@{#}">Our Vision</a></h3>
+                                <p>To be a one stop shop in Nigeria providing the most fantastic and very rich learning
+                                    resources for young learners.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a th:href="@{#}">Our Mission</a>
+                                </h3>
+                                <p>To facilitate building of academic gaints who in turn constitute national human assets
+                                    adding value to humanity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- End About Us Area -->
+
+
+        <!-- Start Our Services Area -->
+        <section id="our-services" class="wn__product__area brown--color pt--80  pb--30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section__title text-center">
+                            <h2 class="title__be--2">Our <span class="color--theme">Services</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start Single Tab Content -->
+                <div class="row mt--50">
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a>
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>Bookshop</a>
+                                </h3>
+                                <p>We sell and supply in wholesales and retail all types of exotic books for
+                                    academic and pleasure reading ranging from Mathematics, science,
+                                    story books, encyclopedias, stationeries for schools and offices.
+                                    We also engage in library stocking project for schools, educational
+                                    centres and public library.</p>
+                                <a class="shopbtn" href="#contact-us">for more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a>
+                                    <i class="fa fa-user-md" aria-hidden="true"></i>MathsClinic</a></h3>
+                                <p>We chose to make mathematics teaching a passionate project and
+                                    with our science and engineering background combined with 28 years
+                                    teaching experience. We run  dynamic mathematics clinics for upper primary
+                                    (4-6),JSS and SSS.</p>
+                                <a class="shopbtn" href="#contact-us">for more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a>
+                                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>EduConsult</a>
+                                </h3>
+                                <p>With our super advantage of clusters of trained, experienced teachers, we at
+                                    Deenbreed provide services to school in the area of: retraining of teachers,
+                                    school environment risk assessment and safety education etc.</p>
+                                <a class="shopbtn" href="#contact-us">for more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mt--50">
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a>
+                                    <i class="fa fa-scissors" aria-hidden="true"></i>Uniform/Sport Wears</a>
+                                </h3>
+                                <p>We engage in the provision of well knitted education dresses such as: School Uniform,
+                                    Sport wear, Taekwando/Karate wears etc.</p>
+                                <a class="shopbtn" href="#contact-us">for more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a>
+                                    <i class="fa fa-cogs" aria-hidden="true"></i>Engineering Education</a></h3>
+                                <p>With the availability of seasoned, qualified, registered engineers we at deenbreed
+                                    train to proficiency level the following engineering courses: Basic AutoCAD2,
+                                    Professional AutoCAD, Piping Design and Drafting, Introduction to Subsea Engineering etc.</p>
+                                <a class="shopbtn" href="#contact-us">for more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-sm-12">
+                        <div class="post__itam">
+                            <div class="content">
+                                <h3><a>
+                                    <i class="fa fa-handshake-o" aria-hidden="true"></i>Manpower</a></h3>
+                                <p>We also engage in drafting services and Supply of design manpower.</p>
+                                <a class="shopbtn" href="#contact-us">for more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End Single Tab Content -->
+            </div>
+        </section>
+        <!-- Start Our Services Area -->
+
+        <!-- Start Contact Area -->
+        <section id="contact-us" class="wn_contact_area bg--white pt--80 pb--80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section__title text-center">
+                            <h2  class="title__be--2">Contact <span class="color--theme">Us</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-12">
+                        <div class="contact-form-wrap">
+                            <h2 class="contact__title">Get in touch</h2>
+                            <form id="contact-form" action="#" method="post">
+                                <div class="single-contact-form space-between">
+                                    <input type="text" name="firstname" placeholder="First Name*">
+                                    <input type="text" name="lastname" placeholder="Last Name*">
+                                </div>
+                                <div class="single-contact-form">
+                                    <input type="text" name="subject" placeholder="Subject*">
+                                </div>
+                                <div class="single-contact-form message">
+                                    <textarea name="message" placeholder="Type your message here.."></textarea>
+                                </div>
+                                <div class="contact-btn">
+                                    <button type="submit">Send Email</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="form-output">
+                            <p class="form-messege">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12 md-mt-40 sm-mt-40">
+                        <div class="wn__address">
+                            <h2 class="contact__title">Visit us today.</h2>
+
+                            <div class="wn__addres__wreapper">
+
+                                <div class="single__address">
+                                    <i class="icon-location-pin icons"></i>
+                                    <div class="content">
+                                        <span>Lagos address:</span>
+                                        <p>67, Isiba Oluwo, Egbeda Lagos.</p>
+                                    </div>
+                                </div>
+
+                                <div class="single__address">
+                                    <i class="icon-location-pin icons"></i>
+                                    <div class="content">
+                                        <span>Abuja address:</span>
+                                        <p>House 2, Office of Accountant Quarters,
+                                        By NYSC Camp, Kubwa Village, Abuja.</p>
+                                    </div>
+                                </div>
+
+                                <div class="single__address">
+                                    <i class="icon-phone icons"></i>
+                                    <div class="content">
+                                        <span>Phone Number:</span>
+                                        <p>0809800748</p>
+                                    </div>
+                                </div>
+
+                                <div class="single__address">
+                                    <i class="icon-envelope icons"></i>
+                                    <div class="content">
+                                        <span>Email address:</span>
+                                        <p>deenbreedlagos@gmail.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="single__address">
+                                    <i class="icon-globe icons"></i>
+                                    <div class="content">
+                                        <span>website address:</span>
+                                        <p>www.deenbreedbookshop.com</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact Area -->
+
+
+        <!-- Footer Area -->
+        <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+            <div class="footer-static-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer__widget footer__menu">
+                                <div class="ft__logo">
+                                    <a th:href="@{/}">
+                                        <img th:src="@{assets/images/logo/logo.png}" style="width: 150px;" alt="logo images">
+                                    </a>
+                                    <p>Our trademark bookmarks, which are as old as the shop itself, have stood
+                                        the test of time. When our customers buy their books they are sure to
+                                        leave with something more: the prestige bookmark.</p>
+                                </div>
+                                <div class="footer__content">
+                                    <ul class="social__net social__net--2 d-flex justify-content-center">
+                                        <li><a th:href="@{#}"><i class="bi bi-facebook"></i></a></li>
+                                        <li><a th:href="@{#}"><i class="bi bi-twitter"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright__wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="copyright">
+                                <div class="copy__right__inner text-left">
+                                    <p>Copyright 2020 <i class="fa fa-copyright"></i> <a href="#">IntellisenseHUB.</a> All Rights
+                                        Reserved</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //Footer Area -->
+
+        <!-- QUICKVIEW PRODUCT -->
+        <div id="quickview-wrapper">
+            <!-- Modal -->
+            <div class="modal fade" id="productmodal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal__container" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header modal__header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-product">
+                                <!-- Start product images -->
+                                <div class="product-images">
+                                    <div class="main-image images">
+                                        <img alt="big images" th:src="@{assets/images/product/big-img/1.jpg}">
+                                    </div>
+                                </div>
+                                <!-- end product images -->
+                                <div class="product-info">
+                                    <h1>Simple Fabric Bags</h1>
+                                    <div class="rating__and__review">
+                                        <ul class="rating">
+                                            <li><span class="ti-star"></span></li>
+                                            <li><span class="ti-star"></span></li>
+                                            <li><span class="ti-star"></span></li>
+                                            <li><span class="ti-star"></span></li>
+                                            <li><span class="ti-star"></span></li>
+                                        </ul>
+                                        <div class="review">
+                                            <a href="#">4 customer reviews</a>
+                                        </div>
+                                    </div>
+                                    <div class="price-box-3">
+                                        <div class="s-price-box">
+                                            <span class="new-price">$17.20</span>
+                                            <span class="old-price">$45.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="quick-desc">
+                                        Designed for simplicity and made from high quality materials. Its sleek geometry
+                                        and material combinations creates a modern look.
+                                    </div>
+                                    <div class="select__color">
+                                        <h2>Select color</h2>
+                                        <ul class="color__list">
+                                            <li class="red"><a title="Red" href="#">Red</a></li>
+                                            <li class="gold"><a title="Gold" href="#">Gold</a></li>
+                                            <li class="orange"><a title="Orange" href="#">Orange</a></li>
+                                            <li class="orange"><a title="Orange" href="#">Orange</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="select__size">
+                                        <h2>Select size</h2>
+                                        <ul class="color__list">
+                                            <li class="l__size"><a title="L" href="#">L</a></li>
+                                            <li class="m__size"><a title="M" href="#">M</a></li>
+                                            <li class="s__size"><a title="S" href="#">S</a></li>
+                                            <li class="xl__size"><a title="XL" href="#">XL</a></li>
+                                            <li class="xxl__size"><a title="XXL" href="#">XXL</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="social-sharing">
+                                        <div class="widget widget_socialsharing_widget">
+                                            <h3 class="widget-title-modal">Share this product</h3>
+                                            <ul class="social__net social__net--2 d-flex justify-content-start">
+                                                <li class="facebook"><a href="#" class="rss social-icon"><i
+                                                        class="zmdi zmdi-rss"></i></a></li>
+                                                <li class="linkedin"><a href="#" class="linkedin social-icon"><i
+                                                        class="zmdi zmdi-linkedin"></i></a></li>
+                                                <li class="pinterest"><a href="#" class="pinterest social-icon"><i
+                                                        class="zmdi zmdi-pinterest"></i></a></li>
+                                                <li class="tumblr"><a href="#" class="tumblr social-icon"><i
+                                                        class="zmdi zmdi-tumblr"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="addtocart-btn">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END QUICKVIEW PRODUCT -->
+
+    </div>
+<!-- Js Files -->
+    <!-- JS Files -->
+    <script th:src="@{assets/js/vendor/jquery3.2.1.min.js}"></script>
+    <script th:src="@{assets/js/popper.min.js}"></script>
+    <script th:src="@{assets/js/bootstrap.min.js}"></script>
+    <script th:src="@{assets/js/plugins.js}"></script>
+    <script th:src="@{assets/js/active.js}"></script>
+</body>
+</html>

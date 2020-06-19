@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>DeenBreed | Books Library eCommerce Store</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <!--<link rel="apple-touch-icon" href="images/icon.png">-->
+
+    <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/plugins.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+
+    <!-- Cusom css -->
+    <link rel="stylesheet" th:href="@{/assets/css/custom.css}">
+
+    <!-- data table -->
+    <link rel="stylesheet" type="text/css" th:href="@{/extra/css/datatables.min.css}"/>
+
+    <!-- Modernizer js -->
+    <script th:src="@{/assets/js/vendor/modernizr-3.5.0.min.js}"></script>
+
+    <style>
+        .btn-link{
+            border: 2px solid #333;
+            background: rgba(0,0,0,0) none repeat scroll 0 0;
+            margin-bottom: 20px;
+            margin-left: 15px;
+            color: #333;
+            display: inline-block;
+            font-size: 12px;
+            line-height: 34px;
+            padding: 2px 20px 0;
+            text-shadow: none;
+            text-transform: uppercase;
+            transition: all 0.4s ease 0s;
+        }
+    </style>
+</head>
+<body>
+<!-- Main wrapper -->
+<div class="wrapper" id="wrapper">
+    <!-- Header -->
+    <header id="wn__header" class="oth-page header__area header__absolute">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <div class="logo">
+                        <a th:href="@{/}">
+                            <!-- company logo -->
+                            <img th:src="@{assets/images/logo/logo.png}" style="width: 70px;" alt="logo images">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 d-none d-lg-block">
+                    <nav class="mainmenu__nav">
+                        <ul class="meninmenu d-flex justify-content-start">
+                            <li class="drop with--one--item"><a th:href="@{/}">Home</a></li>
+                            <li class="drop with--one--item"><a th:href="@{/shop/books}">Shop</a></li>
+                            <li class="drop"><a href="#">Books</a>
+                                <div class="megamenu mega03">
+                                    <ul class="item item03">
+                                        <li class="title">Categories</li>
+                                        <li><a th:href="@{#}">Accounting </a></li>
+                                        <li><a th:href="@{#}">Architecture </a></li>
+                                        <li><a th:href="@{#}">Art and Culture </a></li>
+                                        <li><a th:href="@{#}">Autobiography/Biography </a></li>
+                                        <li><a th:href="@{#}">Business </a></li>
+                                        <li><a th:href="@{#}">Cooking/Food </a></li>
+                                        <li><a th:href="@{#}">Development </a></li>
+                                        <li><a th:href="@{#}">Economics </a></li>
+                                        <li><a th:href="@{#}">Engineering</a></li>
+                                        <li><a th:href="@{#}">Fiction</a></li>
+                                    </ul>
+                                    <ul class="item item02">
+                                        <li class="title">Categories</li>
+                                        <li><a th:href="@{#}">Finance </a></li>
+                                        <li><a th:href="@{#}">History</a></li>
+                                        <li><a th:href="@{#}">Law </a></li>
+                                        <li><a th:href="@{#}">Medicine </a></li>
+                                        <li><a th:href="@{#}">New Books</a></li>
+                                        <li><a th:href="@{#}">Philosophy</a></li>
+                                        <li><a th:href="@{#}">Politics </a></li>
+                                        <li><a th:href="@{#}">Religion</a></li>
+                                        <li><a th:href="@{#}">Sport</a></li>
+                                        <li><a th:href="@{#}">Fiction</a></li>
+                                    </ul>
+                                    <ul class="item item01">
+                                        <li class="title">Categories</li>
+                                        <li><a th:href="@{#}">Finance </a></li>
+                                        <li><a th:href="@{#}">History</a></li>
+                                        <li><a th:href="@{#}">Law </a></li>
+                                        <li><a th:href="@{#}">Medicine </a></li>
+                                        <li><a th:href="@{#}">New Books</a></li>
+                                        <li><a th:href="@{#}">Philosophy</a></li>
+                                        <li><a th:href="@{#}">Politics </a></li>
+                                        <li><a th:href="@{#}">Religion</a></li>
+                                        <li><a th:href="@{#}">Sport</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="drop"><a href="#">Kids</a>
+                                <div class="megamenu mega02">
+                                    <ul class="item item02">
+                                        <li class="title">Collections</li>
+                                        <li><a th:href="@{#}">Activity Books</a></li>
+                                        <li><a th:href="@{#}">Art, Crafts and Hobbies</a></li>
+                                        <li><a th:href="@{#}">Autobiography/Biography</a></li>
+                                        <li><a th:href="@{#}">Early Readers</a></li>
+                                        <li><a th:href="@{#}">Board Games and Puzzles</a></li>
+                                        <li><a th:href="@{#}">Cartooon Characters</a></li>
+                                        <li><a th:href="@{#}">Children's Fiction</a></li>
+                                        <li><a th:href="@{#}">Children's Gifts and Accessories</a></li>
+                                    </ul>
+                                    <ul class="item item03">
+                                        <li class="title">Collections</li>
+                                        <li><a th:href="@{#}">Educational and Fun Toys</a></li>
+                                        <li><a th:href="@{#}">Electronic Learning Toys</a></li>
+                                        <li><a th:href="@{#}">Motivational</a></li>
+                                        <li><a th:href="@{#}">Outdoors</a></li>
+                                        <li><a th:href="@{#}">Electronic Learning Toys</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a th:href="@{/gallery}">Gallery</a></li>
+                            <li><a th:href="@{/#about-us}">About</a></li>
+                            <li><a th:href="@{/#our-services}">Services</a></li>
+                            <li><a th:href="@{/#contact-us}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+                        <li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+                            <div class="searchbar__content setting__block">
+                                <div class="content-inner">
+                                    <div class="switcher-currency">
+                                        <strong class="label switcher-label">
+                                            <span>My Account</span>
+                                        </strong>
+                                        <div class="switcher-options">
+                                            <div class="switcher-currency-trigger">
+                                                <div class="setting__menu">
+                                                    <span><a th:href="@{/login}">Login</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Start Mobile Menu -->
+            <div class="row d-none">
+                <div class="col-lg-12 d-none">
+                    <nav class="mobilemenu__nav">
+                        <ul class="meninmenu">
+                            <li><a th:href="@{/}">Home</a></li>
+                            <li><a th:href="@{/shop/books}">Shop</a></li>
+                            <li><a th:href="@{/gallery}">Gallery</a></li>
+                            <li><a th:href="@{/#about-us}">About</a></li>
+                            <li><a th:href="@{/#our-services}">Services</a></li>
+                            <li><a th:href="@{/#contact-us}">Contact</a></li>
+                            <li><a th:href="@{/login}">My Account</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- End Mobile Menu -->
+            <div class="mobile-menu d-block d-lg-none">
+            </div>
+            <!-- Mobile Menu -->
+        </div>
+    </header>
+    <!-- //Header -->
+
+    <!-- Start Bradcaump area -->
+    <div class="ht__bradcaump__area bg-image--6">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">Our Shop</h2>
+                        <nav class="bradcaump-content">
+                            <a class="breadcrumb_item" th:href="@{/}">Home</a>
+                            <span class="brd-separetor">/</span>
+                            <span class="breadcrumb_item active">Our Shop</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Bradcaump area -->
+
+    <!-- Start Shop Page -->
+    <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
+        <div class="container">
+            <div class="row" style="margin-top: 60px;">
+                <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
+                    <div class="shop__sidebar">
+                        <aside class="wedget__categories poroduct--cat">
+                            <h3 class="wedget__title">Product Categories</h3>
+                            <ul>
+                                <ul>
+                                    <li><a th:href="@{/shop/books(category='all')}" th:classappend="${activeAll}? 'active'" >All</a></li>
+                                    <li><a th:href="@{/shop/books/searchByCategory(category='Management')}" th:classappend="${activeManagement}? 'active'" >Management</a></li>
+                                    <li> <a th:href="@{/shop/books/searchByCategory(category='Fiction')}" th:classappend="${activeFiction}? 'active'">Fiction</a></li>
+                                    <li><a th:href="@{/shop/books/searchByCategory(category='Engineering')}" th:classappend="${activeEngineering}? 'active'">Engineering</a></li>
+                                    <li><a th:href="@{/shop/books/searchByCategory(category='Programming')}" th:classappend="${activeProgramming}? 'active'">Programming</a></li>
+                                    <li><a th:href="@{/shop/books/searchByCategory(category='Arts &amp; Literature')}" th:classappend="${activeArtsLiterature}? 'active'">Arts &amp; Literature</a></li>
+                                </ul>
+                            </ul>
+                        </aside>
+                        <aside class="wedget__categories poroduct--tag">
+                            <h3 class="wedget__title">Product Tags</h3>
+                            <ul>
+                                <li><a th:href="@{/shop/books(category='all')}" th:classappend="${activeAll}? 'active'" >All</a></li>
+                                <li><a th:href="@{/shop/books/searchByCategory(category='Management')}" th:classappend="${activeManagement}? 'active'" >Management</a></li>
+                                <li> <a th:href="@{/shop/books/searchByCategory(category='Fiction')}" th:classappend="${activeFiction}? 'active'">Fiction</a></li>
+                                <li><a th:href="@{/shop/books/searchByCategory(category='Engineering')}" th:classappend="${activeEngineering}? 'active'">Engineering</a></li>
+                                <li><a th:href="@{/shop/books/searchByCategory(category='Programming')}" th:classappend="${activeProgramming}? 'active'">Programming</a></li>
+                                <li><a th:href="@{/shop/books/searchByCategory(category='Arts &amp; Literature')}" th:classappend="${activeArtsLiterature}? 'active'">Arts &amp; Literature</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 col-12 order-1 order-lg-2">
+                    <div class="row">
+                        <div class="btn-link">
+                            <a th:href="@{/shop/books}">Back to BookShop</a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <input hidden="hidden" th:field="*{book.id}"/>
+
+                        <div class="col-lg-5 col-md-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img class="img-fluid shelf-book card-img" th:src="@{/extra/image/book/}+${book.id}+'.png'"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-md-3">
+                            <h3 th:text="${book.title}">Book Title</h3>
+                            <h5><strong>Author: </strong><span th:text="${book.author}"></span></h5>
+                            <p><strong>Publisher: </strong><span th:text="${book.publisher}"></span></p>
+                            <p><strong>Publication Date: </strong><span th:text="${book.publicationDate}"></span></p>
+                            <p><strong>Language: </strong><span th:text=" ${book.language.toUpperCase()}"></span></p>
+                            <p><strong>Category: </strong><span th:text="${book.Category.toUpperCase()}"></span></p>
+                            <p><strong><span th:text="${book.format}"></span>: </strong><span th:text="${book.numberOfPages}"> pages</span></p>
+                            <p><strong>ISBN: </strong><span th:text="${book.isbn}"></span></p>
+                            <hr/>
+                            <p><strong>Description: </strong><span th:utext="${book.description}"></span></p>
+                        </div>
+                    </div>
+                    <div class="row" >
+                            <div class="col-12">
+                                <div class="card" style="border-width: 5px; margin-top: 20px;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h4>Our Price: <span style="color: #db3208;">#<span th:text="${book.ourPrice}"></span></span></h4>
+                                                <p>List Price: <span style="text-decoration: Line-through">#<span th:text="${book.listPrice}"></span></span></p>
+                                                <p>You save: #<span th:text="${#numbers.formatDecimal((book.listPrice - book.ourPrice), 0, 'COMMA', 2, 'POINT')}"></span></p>
+                                                <span>Qty: </span>
+                                                <select name="qty">
+                                                    <option th:each="qty: ${qtyList}" th:value="${qty}" th:text="${qty}"></option>
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <h4 th:if="*{book.inStockNumber&gt;10}" style="color: green">In Stock</h4>
+                                                <h4 th:if="*{book.inStockNumber&lt;10 and book.inStockNumber&gt;0}" style="color: green">Only <span th:text="${book.inStockNumber}"></span> In Stock</h4>
+                                                <h4 th:if="*{book.inStockNumber==0}" style="color: darkred;">Unavailable</h4>
+                                                <div class="btn-link">
+                                                    <!--<button type="submit">Make Order</button>-->
+                                                    <a th:href="@{/book/order/new(id=${book.id})}">Make an Order</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Shop Page -->
+
+    <!-- Footer Area -->
+    <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+        <div class="footer-static-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__widget footer__menu">
+                            <div class="ft__logo">
+                                <a href="index.html">
+                                    <img th:src="@{assets/images/logo/logo.png}" style="width: 150px;" alt="logo images">
+                                </a>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                    have suffered duskam alteration variations of passages</p>
+                            </div>
+                            <div class="footer__content">
+                                <ul class="social__net social__net--2 d-flex justify-content-center">
+                                    <li><a th:href="@{#}"><i class="bi bi-facebook"></i></a></li>
+                                    <li><a th:href="@{#}"><i class="bi bi-google"></i></a></li>
+                                    <li><a th:href="@{#}"><i class="bi bi-twitter"></i></a></li>
+                                    <li><a th:href="@{#}"><i class="bi bi-linkedin"></i></a></li>
+                                    <li><a th:href="@{#}"><i class="bi bi-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="copyright">
+                            <div class="copy__right__inner text-left">
+                                <p>Copyright 2020 <i class="fa fa-copyright"></i> <a href="#">IntellisenseHUB.</a> All Rights
+                                    Reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //Footer Area -->
+
+</div>
+
+<!-- JS Files -->
+<script th:src="@{assets/js/vendor/jquery3.2.1.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/plugins.js}"></script>
+<script th:src="@{assets/js/active.js}"></script>
+
+</body>
+</html>
