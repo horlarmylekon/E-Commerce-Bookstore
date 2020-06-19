@@ -53,9 +53,9 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/gallery")
+    @RequestMapping(value = "/gallery", method = RequestMethod.GET)
     public String showGalleryPage() {
-        return "bookstore/gallery";
+        return "/bookstore/gallery";
     }
 
     @RequestMapping("/login")
@@ -113,7 +113,7 @@ public class HomeController {
         model.addAttribute("bookList", bookList);
         model.addAttribute("activeALL", true);
 
-        return "bookstore/shop";
+        return "/bookstore/shop";
     }
 
     @RequestMapping(value = "/newUser", method = RequestMethod.POST)

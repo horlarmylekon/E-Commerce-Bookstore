@@ -24,7 +24,7 @@ import java.util.Map;
 public class CloudinaryFileUploader {
 
     @Autowired
-    @Qualifier("cloudinary")
+//    @Qualifier("cloudinary")
     FileUploader uploaderSvc;
 
     @PutMapping("upload/book")

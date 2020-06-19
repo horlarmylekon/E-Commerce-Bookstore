@@ -35,7 +35,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
             "/image/**",
             "/",
             "/gallery",
-            "/shop/books",
             "/shop/books/**",
             "/forgetPassword",
             "/fonts/**",
